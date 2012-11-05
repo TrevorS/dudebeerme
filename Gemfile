@@ -9,17 +9,10 @@ gem 'will_paginate'
 gem 'bootstrap-will_paginate'
 gem 'devise'
 gem 'haml'
+gem 'mysql2'
 
 group :development do
   gem 'annotate'
-end
-
-group :development, :test do
-  gem 'sqlite3'
-end
-
-group :production do
-  gem 'mysql2'
 end
 
 group :assets do
