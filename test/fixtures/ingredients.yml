@@ -1,0 +1,23 @@
+# == Schema Information
+#
+# Table name: ingredients
+#
+#  id         :integer          not null, primary key
+#  name       :string(255)
+#  quantity   :float
+#  unit       :string(255)
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  quantity: 1.5
+  unit: MyString
+
+two:
+  name: MyString
+  quantity: 1.5
+  unit: MyString

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121105032346) do
+ActiveRecord::Schema.define(:version => 20121105033623) do
 
   create_table "brewers", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -34,6 +34,14 @@ ActiveRecord::Schema.define(:version => 20121105032346) do
 
   add_index "brewers", ["email"], :name => "index_brewers_on_email", :unique => true
   add_index "brewers", ["reset_password_token"], :name => "index_brewers_on_reset_password_token", :unique => true
+
+  create_table "ingredients", :force => true do |t|
+    t.string   "name"
+    t.float    "quantity"
+    t.string   "unit"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "recipes", :force => true do |t|
     t.string   "name"

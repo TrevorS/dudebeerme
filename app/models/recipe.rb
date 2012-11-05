@@ -15,6 +15,9 @@
 
 class Recipe < ActiveRecord::Base
 
+  # each recipe has many ingredients.
+  has_many :ingredients
+
   # each recipe belongs to a brewer.
   belongs_to :brewer
 
