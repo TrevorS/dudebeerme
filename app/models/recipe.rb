@@ -15,6 +15,9 @@
 
 class Recipe < ActiveRecord::Base
 
+  # use 'closure_tree' gem to develop hierarchical model for Recipes
+  acts_as_tree
+
   # each recipe has many ingredients.
   has_many :ingredients
 

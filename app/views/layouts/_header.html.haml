@@ -1,0 +1,35 @@
+.navbar
+  .navbar-inner
+    .container-fluid
+      %a.brand{ href: '#', name: 'top' } dudebeer.me
+      %ul.nav.pull-right
+
+        %li
+          %a{ href: '#' }
+            %i.icon-group
+            Brewers
+        %li
+          %a{ href: '#' }
+            %i.icon-beaker
+            Recipes
+
+        %li
+          %a{ href: '#' }
+            %i.icon-book
+            Blog
+
+        - if brewer_signed_in?
+          %li
+            %a{ href: '#' }
+              %i.icon-cog
+              Settings
+          %li
+            %a{ href: '#' }
+              %i.icon-signout
+              Sign out
+
+        - else
+          %li
+            %a{ href: '#' }
+              %i.icon-signin
+              Sign In!

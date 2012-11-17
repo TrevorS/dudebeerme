@@ -10,6 +10,8 @@ gem 'bootstrap-will_paginate'
 gem 'devise'
 gem 'haml'
 gem 'mysql2'
+gem 'closure_tree'
+gem 'font-awesome-sass-rails'
 
 group :development do
   gem 'annotate'

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121105034549) do
+ActiveRecord::Schema.define(:version => 20121117165905) do
 
   create_table "brewers", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -50,6 +50,15 @@ ActiveRecord::Schema.define(:version => 20121105034549) do
     t.datetime "updated_at", :null => false
   end
 
+  create_table "recipe_hierarchies", :id => false, :force => true do |t|
+    t.integer "ancestor_id",   :null => false
+    t.integer "descendant_id", :null => false
+    t.integer "generations",   :null => false
+  end
+
+  add_index "recipe_hierarchies", ["ancestor_id", "descendant_id"], :name => "index_recipe_hierarchies_on_ancestor_id_and_descendant_id", :unique => true
+  add_index "recipe_hierarchies", ["descendant_id"], :name => "index_recipe_hierarchies_on_descendant_id"
+
   create_table "recipes", :force => true do |t|
     t.string   "name"
     t.string   "style"
@@ -59,6 +68,7 @@ ActiveRecord::Schema.define(:version => 20121105034549) do
     t.string   "description"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+    t.integer  "parent_id"
   end
 
 end

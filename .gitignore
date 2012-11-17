@@ -16,3 +16,14 @@
 
 # Ignore the database.yml configuration file
 /config/database.yml
+
+# Ignore the assets directory.
+/public/assests/
+
+# Ignore other unneeded files.
+doc/
+*.swp
+*~
+.project
+.DS_Store
+.idea
