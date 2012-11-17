@@ -1,6 +1,10 @@
 .row
   .hero-unit
-    %h1
-      dudebeer.me
-    %p
-      A social beer brewing recipe repository.
+    .row
+      .span3
+        = image_tag 'beer-mug.png'
+
+      .offset1.span5.sign-up
+        %h1.hero-title dudebeer.me
+        %p.hero-subtitle A social home brewing recipe repository.
+        .center= link_to 'Sign up now!', '#', class: 'btn btn-success btn-large'

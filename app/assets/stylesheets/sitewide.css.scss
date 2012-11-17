@@ -1,0 +1,28 @@
+// Site-wide css/scss for dudebeer.me
+
+body {
+    background: image-url('debut_light.png');
+}
+
+h1 {
+    font-family: 'Paprika', cursive;
+}
+
+h1.hero-title {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+p.hero-subtitle {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.sign-up {
+    margin-top: 50px;
+    margin-left: 150px;
+}
+
+.center {
+    text-align: center;
+}

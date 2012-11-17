@@ -12,6 +12,7 @@ gem 'haml'
 gem 'mysql2'
 gem 'closure_tree'
 gem 'font-awesome-sass-rails'
+gem 'google-webfonts'
 
 group :development do
   gem 'annotate'
