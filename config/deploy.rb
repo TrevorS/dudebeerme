@@ -1,3 +1,11 @@
+# dudebeer.me deploy.rb
+#
+# rbenv / capistrano settings:
+# http://henriksjokvist.net/archive/2012/2/deploying-with-rbenv-and-capistrano/
+#
+# database.yml symlink settings:
+# http://stackoverflow.com/questions/9684649/capistrano-cant-deploy-my-database-yml
+
 # we are going to use bundler to handle gems
 require 'bundler/capistrano'
 
@@ -5,7 +13,7 @@ require 'bundler/capistrano'
 set :bundle_flags, '--deployment --quiet --binstubs --shebang ruby-local-exec'
 
 # set the path to the bundle executable
-set (:bundle_cmd) { "#{release_path}/bin/bundle" }
+set (:bundle_cmd) { "/home/nginx/.rbenv/shims/bundle" }
 
 # add the rbenv shims and bin locations to the path
 set :default_environment, {
@@ -58,13 +66,9 @@ namespace :deploy do
 end
 
 # run the database config symlink after deploying
-after 'deploy:update_code', 'deploy:symlink_db'
-
-# from http://stackoverflow.com/questions/1449836/how-to-manage-rails-database-yml
-# symlink database.yml into place
-namespace :deploy do
-  desc 'Symlinks database.yml'
-  task :symlink_db, roles: :app do
-    run "ln -nfs #{deploy_to}/shared/config/database.yml #{relase_path}/config/database.yml"
-  end
+before "deploy:assets:precompile" do
+  run ["ln -nfs #{shared_path}/config/settings.yml #{release_path}/config/settings.yml",
+       "ln -nfs #{shared_path}/config/database.yml #{release_path}/config/database.yml",
+       "ln -fs #{shared_path}/uploads #{release_path}/uploads"
+  ].join(" && ")
 end
