@@ -13,6 +13,7 @@ gem 'mysql2'
 gem 'closure_tree'
 gem 'font-awesome-sass-rails'
 gem 'google-webfonts'
+gem 'capistrano'
 
 group :development do
   gem 'annotate'
