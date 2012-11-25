@@ -1,5 +1,9 @@
 class StaticController < ApplicationController
 
+  def coming_soon
+    @interested_brewer = InterestedBrewer.new
+  end
+
   def home
   end
 

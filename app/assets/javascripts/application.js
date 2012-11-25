@@ -12,4 +12,6 @@
 //
 //= require jquery
 //= require jquery_ujs
+// Don't forget to clean up the bootstrap require, we only need a few things. (for now)
+//= require bootstrap
 //= require_tree .

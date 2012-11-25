@@ -1,5 +1,8 @@
 Dudebeerme::Application.routes.draw do
 
+  # set up interested brewers for the coming soon page
+  resources :interested_brewers
+
   # set up devise for brewers (users)
   devise_for :brewers
 
@@ -14,11 +17,12 @@ Dudebeerme::Application.routes.draw do
   end
 
   # setup static pages
-  get "static/home"
-  get "static/faq"
-  get "static/about"
+  get 'static/home'
+  get 'static/faq'
+  get 'static/about'
+  get 'static/coming_soon'
 
   # set up the root route
-  root to: "static#home"
+  root to: 'static#coming_soon'
 
 end
