@@ -14,6 +14,9 @@ gem 'closure_tree'
 gem 'font-awesome-sass-rails'
 gem 'google-webfonts'
 gem 'capistrano'
+gem 'simple_form'
+gem 'client_side_validations'
+gem 'client_side_validations-simple_form'
 
 group :development do
   gem 'annotate'

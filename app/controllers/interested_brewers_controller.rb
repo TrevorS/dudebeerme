@@ -6,8 +6,10 @@ class InterestedBrewersController < ApplicationController
     if @interested_brewer.save
       flash[:success] = 'Thank you for signing up, we will email you soon!'
     else
-      if InterestedBrewer.find_by_email(email)
-        flash[:notice] = "You've already registered this email address!"
+      if email.empty?
+        flash[:error] = 'You did not enter an email address!'
+      elsif InterestedBrewer.find_by_email(email)
+        flash[:notice] = 'This email address has already been registered.'
       else
         flash[:error] = 'Something went wrong, please try again.'
       end

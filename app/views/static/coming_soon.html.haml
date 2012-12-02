@@ -9,9 +9,9 @@
         %p.hero-subtitle A social homebrewing recipe repository.
 
         .center
-          = form_for @interested_brewer, html: { class:'form-inline' } do |f|
-            = f.text_field :email, placeholder:"Enter your email here", class: 'interested-email'
-            = f.submit "I'm interested!", class: 'btn btn-warning'
+          = simple_form_for @interested_brewer, validate: true, html: { class: 'form-inline' } do |f|
+            = f.input_field :email, placeholder: 'Enter your email here', class: 'interested-email'
+            = f.button :submit, "I'm interested!", class: 'btn btn-warning'
 
   .row.features
     .span4

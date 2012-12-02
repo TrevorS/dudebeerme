@@ -2,4 +2,14 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
-  hello: "Hello world"
+  activerecord:
+    attributes:
+      interested_brewer:
+        email: "Email address"
+    errors:
+      models:
+        interested_brewer:
+          attributes:
+            email:
+              blank: "You have not entered an email address!"
+              taken: "You've already signed up!!"
